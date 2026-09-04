@@ -10,7 +10,10 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ApproachRouteImport } from './routes/approach'
 import { Route as CapabilitiesRouteImport } from './routes/capabilities'
+import { Route as WorkRouteImport } from './routes/work'
 import { Route as CapabilitiesIndexRouteImport } from './routes/capabilities.index'
 import { Route as CapabilitiesSlugRouteImport } from './routes/capabilities.$slug'
 
@@ -19,9 +22,24 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApproachRoute = ApproachRouteImport.update({
+  id: '/approach',
+  path: '/approach',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CapabilitiesRoute = CapabilitiesRouteImport.update({
   id: '/capabilities',
   path: '/capabilities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkRoute = WorkRouteImport.update({
+  id: '/work',
+  path: '/work',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CapabilitiesIndexRoute = CapabilitiesIndexRouteImport.update({
@@ -37,38 +55,66 @@ const CapabilitiesSlugRoute = CapabilitiesSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/approach': typeof ApproachRoute
   '/capabilities': typeof CapabilitiesRouteWithChildren
+  '/work': typeof WorkRoute
   '/capabilities/$slug': typeof CapabilitiesSlugRoute
   '/capabilities/': typeof CapabilitiesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/approach': typeof ApproachRoute
+  '/work': typeof WorkRoute
   '/capabilities/$slug': typeof CapabilitiesSlugRoute
   '/capabilities': typeof CapabilitiesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/approach': typeof ApproachRoute
   '/capabilities': typeof CapabilitiesRouteWithChildren
+  '/work': typeof WorkRoute
   '/capabilities/$slug': typeof CapabilitiesSlugRoute
   '/capabilities/': typeof CapabilitiesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/capabilities' | '/capabilities/$slug' | '/capabilities/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/approach'
+    | '/capabilities'
+    | '/work'
+    | '/capabilities/$slug'
+    | '/capabilities/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/capabilities/$slug' | '/capabilities'
+  to:
+    | '/'
+    | '/about'
+    | '/approach'
+    | '/work'
+    | '/capabilities/$slug'
+    | '/capabilities'
   id:
     | '__root__'
     | '/'
+    | '/about'
+    | '/approach'
     | '/capabilities'
+    | '/work'
     | '/capabilities/$slug'
     | '/capabilities/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ApproachRoute: typeof ApproachRoute
   CapabilitiesRoute: typeof CapabilitiesRouteWithChildren
+  WorkRoute: typeof WorkRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -80,11 +126,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/approach': {
+      id: '/approach'
+      path: '/approach'
+      fullPath: '/approach'
+      preLoaderRoute: typeof ApproachRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/capabilities': {
       id: '/capabilities'
       path: '/capabilities'
       fullPath: '/capabilities'
       preLoaderRoute: typeof CapabilitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work': {
+      id: '/work'
+      path: '/work'
+      fullPath: '/work'
+      preLoaderRoute: typeof WorkRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/capabilities/': {
@@ -120,7 +187,10 @@ const CapabilitiesRouteWithChildren = CapabilitiesRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ApproachRoute: ApproachRoute,
   CapabilitiesRoute: CapabilitiesRouteWithChildren,
+  WorkRoute: WorkRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

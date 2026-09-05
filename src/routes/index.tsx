@@ -100,6 +100,20 @@ function HomePage() {
         </div>
       </section>
 
+      <div className="overflow-hidden border-y border-border/60 bg-surface/30 py-4" aria-hidden>
+        <div className="marquee-track flex w-max items-center gap-10">
+          {[...capabilities, ...capabilities].map((cap, i) => (
+            <span
+              key={`${cap.slug}-${i}`}
+              className="flex items-center gap-10 whitespace-nowrap font-display text-sm uppercase tracking-[0.22em] text-muted-foreground"
+            >
+              {cap.name}
+              <span className="size-1.5 rounded-full bg-primary/70" />
+            </span>
+          ))}
+        </div>
+      </div>
+
       <Section>
         <SectionHeading
           eyebrow="Capabilities"
@@ -186,6 +200,27 @@ function HomePage() {
           ))}
         </div>
       </Section>
+
+      <section className="relative overflow-hidden border-y border-border/60">
+        <Parallax speed={0.3} className="absolute inset-0">
+          <img
+            src={heroImage}
+            alt=""
+            width={1600}
+            height={1000}
+            className="bg-drift h-[130%] w-full object-cover opacity-30"
+          />
+        </Parallax>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--background),color-mix(in_oklch,var(--background)_40%,transparent),var(--background))]" />
+        <div className="container-page relative py-20 text-center sm:py-28">
+          <Reveal>
+            <p className="eyebrow">In motion</p>
+            <p className="mx-auto mt-4 max-w-2xl font-display text-2xl font-semibold leading-snug sm:text-3xl">
+              Ideas researched, systems engineered, outcomes measured — moving as one.
+            </p>
+          </Reveal>
+        </div>
+      </section>
 
       <Section className="pt-0">
         <Reveal className="surface-card relative overflow-hidden p-8 text-center sm:p-14">

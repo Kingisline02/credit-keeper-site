@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Reveal } from "./Reveal";
+import { Parallax } from "./Parallax";
+import heroImage from "@/assets/hero.jpg";
 
 export function Section({
   children,
@@ -49,8 +51,20 @@ export function PageHero({
 }) {
   return (
     <div className="relative overflow-hidden border-b border-border/60">
-      <div aria-hidden className="pointer-events-none absolute inset-0 grid-lines" />
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-veil" />
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <Parallax speed={0.2} className="absolute inset-0">
+          <img
+            src={heroImage}
+            alt=""
+            width={1600}
+            height={1000}
+            className="bg-drift h-full w-full object-cover opacity-25"
+          />
+        </Parallax>
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,color-mix(in_oklch,var(--background)_55%,transparent),var(--background))]" />
+        <div className="absolute inset-0 grid-lines" />
+        <div className="absolute inset-0 bg-veil" />
+      </div>
       <div className="container-page relative py-16 sm:py-20 lg:py-24">
         <Reveal className="max-w-3xl">
           <p className="eyebrow">{eyebrow}</p>

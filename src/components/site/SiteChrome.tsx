@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { COMPANY } from "./content";
+import { ScrollProgress } from "./ScrollProgress";
 
 const nav = [
   { to: "/capabilities", label: "Capabilities" },
@@ -15,6 +16,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
+      <ScrollProgress />
       <div className="container-page flex h-16 items-center justify-between gap-4">
         <Link to="/" className="group flex items-center gap-2.5" onClick={() => setOpen(false)}>
           <span className="grid size-7 place-items-center rounded-md bg-[image:var(--gradient-ember)] text-[13px] font-bold text-primary-foreground">

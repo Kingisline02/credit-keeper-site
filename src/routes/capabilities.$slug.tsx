@@ -31,9 +31,10 @@ export const Route = createFileRoute("/capabilities/$slug")({
 
 function CapabilityDetail() {
   const { capability } = Route.useLoaderData();
-  const related = work.filter((w) =>
-    capability.name.toLowerCase().includes(w.capability.toLowerCase().split(" ")[0]),
-  );
+  const related = work.filter((w) => {
+    const key = w.capability.toLowerCase().split(" ")[0] ?? "";
+    return key !== "" && capability.name.toLowerCase().includes(key);
+  });
 
   return (
     <>

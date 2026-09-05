@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ApproachRouteImport } from './routes/approach'
 import { Route as CapabilitiesRouteImport } from './routes/capabilities'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as WorkRouteImport } from './routes/work'
 import { Route as CapabilitiesIndexRouteImport } from './routes/capabilities.index'
 import { Route as CapabilitiesSlugRouteImport } from './routes/capabilities.$slug'
@@ -37,6 +38,11 @@ const CapabilitiesRoute = CapabilitiesRouteImport.update({
   path: '/capabilities',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WorkRoute = WorkRouteImport.update({
   id: '/work',
   path: '/work',
@@ -58,6 +64,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/approach': typeof ApproachRoute
   '/capabilities': typeof CapabilitiesRouteWithChildren
+  '/contact': typeof ContactRoute
   '/work': typeof WorkRoute
   '/capabilities/$slug': typeof CapabilitiesSlugRoute
   '/capabilities/': typeof CapabilitiesIndexRoute
@@ -66,6 +73,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/approach': typeof ApproachRoute
+  '/contact': typeof ContactRoute
   '/work': typeof WorkRoute
   '/capabilities/$slug': typeof CapabilitiesSlugRoute
   '/capabilities': typeof CapabilitiesIndexRoute
@@ -76,6 +84,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/approach': typeof ApproachRoute
   '/capabilities': typeof CapabilitiesRouteWithChildren
+  '/contact': typeof ContactRoute
   '/work': typeof WorkRoute
   '/capabilities/$slug': typeof CapabilitiesSlugRoute
   '/capabilities/': typeof CapabilitiesIndexRoute
@@ -87,6 +96,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/approach'
     | '/capabilities'
+    | '/contact'
     | '/work'
     | '/capabilities/$slug'
     | '/capabilities/'
@@ -95,6 +105,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/approach'
+    | '/contact'
     | '/work'
     | '/capabilities/$slug'
     | '/capabilities'
@@ -104,6 +115,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/approach'
     | '/capabilities'
+    | '/contact'
     | '/work'
     | '/capabilities/$slug'
     | '/capabilities/'
@@ -114,6 +126,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ApproachRoute: typeof ApproachRoute
   CapabilitiesRoute: typeof CapabilitiesRouteWithChildren
+  ContactRoute: typeof ContactRoute
   WorkRoute: typeof WorkRoute
 }
 
@@ -145,6 +158,13 @@ declare module '@tanstack/react-router' {
       path: '/capabilities'
       fullPath: '/capabilities'
       preLoaderRoute: typeof CapabilitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/work': {
@@ -190,6 +210,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ApproachRoute: ApproachRoute,
   CapabilitiesRoute: CapabilitiesRouteWithChildren,
+  ContactRoute: ContactRoute,
   WorkRoute: WorkRoute,
 }
 export const routeTree = rootRouteImport

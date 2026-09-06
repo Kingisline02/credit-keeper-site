@@ -66,18 +66,30 @@ function WorkPage() {
 
         <div className="mt-10 grid gap-5 md:grid-cols-2">
           {visible.map((item, i) => (
-            <Reveal key={item.title} delay={i * 60} className="surface-card h-full p-7">
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="rounded-full border border-primary/40 px-2.5 py-1 text-xs text-primary">
-                  {item.capability}
-                </span>
-                <span className="text-xs text-muted-foreground">{item.industry}</span>
+            <Reveal key={item.title} delay={i * 60} className="surface-card h-full overflow-hidden">
+              {"image" in item && item.image && (
+                <img
+                  src={item.image}
+                  alt={item.imageAlt}
+                  width={1280}
+                  height={800}
+                  loading="lazy"
+                  className="aspect-[16/9] w-full object-cover"
+                />
+              )}
+              <div className="p-7">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="rounded-full border border-primary/40 px-2.5 py-1 text-xs text-primary">
+                    {item.capability}
+                  </span>
+                  <span className="text-xs text-muted-foreground">{item.industry}</span>
+                </div>
+                <h2 className="mt-4 text-2xl font-semibold">{item.title}</h2>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+                <p className="mt-5 border-t border-border pt-4 text-sm font-medium text-primary">
+                  {item.metric}
+                </p>
               </div>
-              <h2 className="mt-4 text-2xl font-semibold">{item.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
-              <p className="mt-5 border-t border-border pt-4 text-sm font-medium text-primary">
-                {item.metric}
-              </p>
             </Reveal>
           ))}
         </div>

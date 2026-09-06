@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { PageHero, Section, SectionHeading } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
-import { COMPANY } from "@/components/site/content";
+import { COMPANY, photos } from "@/components/site/content";
 
 const disciplines = [
   ["Product strategy", "Framing problems, sizing opportunity and defining what success means."],
@@ -40,6 +40,19 @@ function AboutPage() {
         title="A studio built for ambitious, cross-disciplinary work"
         intro={`${COMPANY} exists to make complex technology understandable and to turn ambitious ideas into practical, deployable outcomes.`}
       />
+
+      <div className="container-page">
+        <Reveal>
+          <img
+            src={photos.studioTeam}
+            alt="The Halcyon Works team collaborating around a table in a bright studio"
+            width={1280}
+            height={800}
+            loading="lazy"
+            className="surface-card aspect-[16/8] w-full object-cover"
+          />
+        </Reveal>
+      </div>
 
       <Section>
         <div className="grid gap-10 lg:grid-cols-12">

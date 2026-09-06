@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { PageHero, Section, SectionHeading } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
-import { COMPANY } from "@/components/site/content";
+import { COMPANY, photos } from "@/components/site/content";
 
 const disciplines = [
   ["Product strategy", "Framing problems, sizing opportunity and defining what success means."],

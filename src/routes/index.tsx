@@ -172,11 +172,23 @@ function HomePage() {
         />
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {work.slice(0, 3).map((item, i) => (
-            <Reveal key={item.title} delay={i * 80} className="surface-card h-full p-6">
-              <p className="eyebrow">{item.capability}</p>
-              <h3 className="mt-3 text-xl font-semibold">{item.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
-              <p className="mt-5 text-sm font-medium text-primary">{item.metric}</p>
+            <Reveal key={item.title} delay={i * 80} className="surface-card h-full overflow-hidden">
+              {"image" in item && item.image && (
+                <img
+                  src={item.image}
+                  alt={item.imageAlt}
+                  width={1280}
+                  height={800}
+                  loading="lazy"
+                  className="aspect-[16/9] w-full object-cover"
+                />
+              )}
+              <div className="p-6">
+                <p className="eyebrow">{item.capability}</p>
+                <h3 className="mt-3 text-xl font-semibold">{item.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+                <p className="mt-5 text-sm font-medium text-primary">{item.metric}</p>
+              </div>
             </Reveal>
           ))}
         </div>

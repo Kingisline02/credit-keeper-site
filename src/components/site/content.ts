@@ -1,4 +1,16 @@
+import workResearch from "@/assets/work-research.jpg";
+import workAi from "@/assets/work-ai.jpg";
+import workIot from "@/assets/work-iot.jpg";
+import studioTeam from "@/assets/studio-team.jpg";
+
 export const COMPANY = "Halcyon Works";
+
+export const photos = {
+  studioTeam,
+  workResearch,
+  workAi,
+  workIot,
+} as const;
 
 export type Capability = {
   slug: string;

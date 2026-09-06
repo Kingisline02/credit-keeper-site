@@ -41,6 +41,19 @@ function AboutPage() {
         intro={`${COMPANY} exists to make complex technology understandable and to turn ambitious ideas into practical, deployable outcomes.`}
       />
 
+      <div className="container-page">
+        <Reveal>
+          <img
+            src={photos.studioTeam}
+            alt="The Halcyon Works team collaborating around a table in a bright studio"
+            width={1280}
+            height={800}
+            loading="lazy"
+            className="surface-card aspect-[16/8] w-full object-cover"
+          />
+        </Reveal>
+      </div>
+
       <Section>
         <div className="grid gap-10 lg:grid-cols-12">
           <Reveal className="lg:col-span-7">

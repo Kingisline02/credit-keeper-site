@@ -164,6 +164,8 @@ export const work = [
     industry: "Health research",
     body: "A consent-aware capture and review workflow for a multi-site observational study, with audit trails and role-scoped access.",
     metric: "Site data turnaround cut from days to hours",
+    image: workResearch,
+    imageAlt: "Researcher reviewing study charts on a tablet in a bright laboratory",
   },
   {
     title: "Retrieval assistant for field engineers",
@@ -171,6 +173,8 @@ export const work = [
     industry: "Industrial",
     body: "A grounded assistant over maintenance manuals and service history, with citation-first answers and a human escalation path.",
     metric: "Answer grounding verified against a 400-case evaluation set",
+    image: workAi,
+    imageAlt: "Field engineers checking an assistant on a rugged tablet at an industrial site",
   },
   {
     title: "Fleet telemetry platform",
@@ -178,6 +182,8 @@ export const work = [
     industry: "Energy",
     body: "Device-to-cloud ingestion, anomaly alerting and an operations dashboard designed for intermittent connectivity.",
     metric: "Fleet visibility across thousands of endpoints",
+    image: workIot,
+    imageAlt: "Connected sensors and wind turbines with live monitoring dashboards",
   },
   {
     title: "Back-office exception automation",

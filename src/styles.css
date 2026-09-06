@@ -212,8 +212,8 @@
 
 .grid-lines {
   background-image:
-    linear-gradient(to right, oklch(1 0 0 / 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(1 0 0 / 0.045) 1px, transparent 1px);
+    linear-gradient(to right, oklch(0.35 0.08 260 / 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.35 0.08 260 / 0.07) 1px, transparent 1px);
   background-size: 72px 72px;
   mask-image: radial-gradient(100% 70% at 50% 20%, black, transparent 85%);
 }

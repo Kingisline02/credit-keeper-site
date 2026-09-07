@@ -66,13 +66,13 @@ function HomePage() {
               <div className="mt-9 flex flex-wrap gap-3">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 rounded-md bg-[image:var(--gradient-ember)] px-5 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform duration-300 hover:-translate-y-0.5"
+                  className="cta-glow inline-flex items-center gap-2 rounded-md bg-[image:var(--gradient-ember)] px-5 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform duration-300 hover:-translate-y-0.5"
                 >
                   Tell us what you are trying to build <ArrowRight className="size-4" />
                 </Link>
                 <Link
                   to="/work"
-                  className="inline-flex items-center gap-2 rounded-md border border-border px-5 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+                  className="cta-glow inline-flex items-center gap-2 rounded-md border border-border px-5 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
                 >
                   See the work
                 </Link>
@@ -247,7 +247,7 @@ function HomePage() {
             </p>
             <Link
               to="/contact"
-              className="mt-8 inline-flex items-center gap-2 rounded-md bg-[image:var(--gradient-ember)] px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform duration-300 hover:-translate-y-0.5"
+              className="cta-glow mt-8 inline-flex items-center gap-2 rounded-md bg-[image:var(--gradient-ember)] px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform duration-300 hover:-translate-y-0.5"
             >
               Start a conversation <ArrowRight className="size-4" />
             </Link>

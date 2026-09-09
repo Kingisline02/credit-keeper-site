@@ -168,7 +168,7 @@
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
-  background: linear-gradient(180deg, oklch(0.11 0.025 255), var(--background) 42%, oklch(0.085 0.015 255));
+  background: linear-gradient(180deg, oklch(0.97 0.012 245), var(--background) 42%, oklch(0.965 0.014 245));
 }
 
 .ambient-aurora {
@@ -177,21 +177,21 @@
   height: 34rem;
   border-radius: 50%;
   filter: blur(110px);
-  opacity: 0.14;
+  opacity: 0.18;
   will-change: transform;
 }
 
 .ambient-aurora-one {
   left: -18rem;
   top: -8rem;
-  background: oklch(0.62 0.22 252);
+  background: oklch(0.68 0.16 245);
   animation: aurora-one 18s ease-in-out infinite alternate;
 }
 
 .ambient-aurora-two {
   right: -22rem;
   top: 34%;
-  background: oklch(0.75 0.16 210);
+  background: oklch(0.78 0.11 215);
   animation: aurora-two 22s ease-in-out infinite alternate;
 }
 
@@ -199,8 +199,8 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(to right, oklch(0.73 0.12 235 / 0.055) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(0.73 0.12 235 / 0.055) 1px, transparent 1px);
+    linear-gradient(to right, oklch(0.45 0.1 255 / 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.45 0.1 255 / 0.07) 1px, transparent 1px);
   background-size: 72px 72px;
   mask-image: linear-gradient(to bottom, black, transparent 88%);
   animation: grid-breathe 8s ease-in-out infinite;
@@ -210,8 +210,8 @@
   position: absolute;
   border: 1px solid color-mix(in oklch, var(--primary) 70%, transparent);
   background: var(--primary);
-  box-shadow: 0 0 16px color-mix(in oklch, var(--primary) 55%, transparent);
-  opacity: 0.42;
+  box-shadow: 0 0 14px color-mix(in oklch, var(--primary) 40%, transparent);
+  opacity: 0.35;
   transform: translate3d(calc(var(--pointer-x) * var(--particle-depth) * 30px), calc(var(--pointer-y) * var(--particle-depth) * 30px), 0) rotate(45deg);
   animation: particle-float 9s ease-in-out var(--particle-delay) infinite;
   will-change: transform;
